@@ -1,5 +1,6 @@
-repeat wait() until game:IsLoaded()
-wait(3)
+repeat
+    wait()
+until game and game.PlaceId and type(game.PlaceId) == "number"
 
 local mapping = {
     [920587237]      = "adoptmee",
@@ -18,6 +19,7 @@ local mapping = {
     [85896571713843] = "bgsi",
     [126884695634066]= "gag",
 }
+
 local name
 local success, err
 
