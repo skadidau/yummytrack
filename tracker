@@ -1,7 +1,6 @@
 repeat wait() until game:IsLoaded()
-wait(5)
+wait(3)
 
-local placeId = game.PlaceId
 local mapping = {
     [920587237]      = "adoptmee",
     [16146832113]    = "animevanguard",
@@ -19,14 +18,26 @@ local mapping = {
     [85896571713843] = "bgsi",
     [126884695634066]= "gag",
 }
+local name
+local success, err
 
-local name = mapping[placeId]
-if name then
-    local success, err = pcall(function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/skadidau/unfazedfree/main/"..name))()
-    end)
+repeat
+    local placeId = game.PlaceId
+    name = mapping[placeId]
 
-    if not success then
-        warn("Load script failed for " .. name .. ": " .. tostring(err))
+    if name then
+        success, err = pcall(function()
+            local url = "https://raw.githubusercontent.com/skadidau/unfazedfree/main/" .. name
+            local response = game:HttpGet(url)
+            local func = loadstring(response)
+            func()
+        end)
+
+        if not success then
+            warn("Load script failed for " .. name .. ": " .. tostring(err) .. " — retrying in 1 second")
+            wait(1)
+        end
+    else
+        success = true
     end
-end
+until success
