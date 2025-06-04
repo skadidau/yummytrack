@@ -4,7 +4,6 @@ until game and game.PlaceId and type(game.PlaceId) == "number"
 
 local mapping = {
     [920587237]      = "adoptmee",
-    [16146832113]    = "animevanguard",
     [2753915549]     = "trackstatblox",
     [4442272183]     = "trackstatblox",
     [7449423635]     = "trackstatblox",
