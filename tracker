@@ -7,6 +7,7 @@ local mapping = {
     [2753915549]     = "trackstatblox",
     [4442272183]     = "trackstatblox",
     [7449423635]     = "trackstatblox",
+    [122478697296975]     = "trackstatblox",
     [4520749081]     = "kinglegacy",
     [8737899170]     = "pet99",
     [16498369169]    = "pet99",
