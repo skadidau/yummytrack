@@ -1,16 +1,1 @@
-repeat task.wait() until game:IsLoaded()
 
-local mapping = { [920587237] = "adoptmee", [2753915549] = "trackstatblox", [4442272183] = "trackstatblox", [7449423635] = "trackstatblox", [76401440271920] = "trackstatblox", [92968389658553] = "trackstatblox", [95165932064349] = "trackstatblox", [10115149137285] = "trackstatblox", [11789698138898] = "trackstatblox", [122478697296975]= "trackstatblox", [4520749081] = "kinglegacy", [8737899170] = "pet99", [16498369169] = "pet99", [17503543197] = "pet99", [84810042603306] = "pet99", [18901165922] = "petsgo", [16732694052] = "fisch", [2809202155] = "yba", [85896571713843] = "bgsi", [126884695634066]= "gag", [109983668079237]= "sab", [79546208627805] = "99night", [142823291] = "mm2", [80469437126309] = "mm2", [127742093697776] = "pvb", [121864768012064] = "fishit" }
-local name = mapping[game.PlaceId]
-if not name then return end
-
-local url = "https://raw.githubusercontent.com/skadidau/unfazedfree/main/" .. name
-for _ = 1, 5 do
-    local ok, err = pcall(function()
-        local s = game:HttpGet(url)
-        local f = loadstring(s)
-        f()
-    end)
-    if ok then break end
-    task.wait(1)
-end
